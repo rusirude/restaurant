@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <div *ngIf="loggedMenu;then login else logout"></div>
+</mat-toolbar>
+
+<ng-template #logout>
+  <mat-toolbar-row>
+    <span>Restaurant Management System</span>
+  </mat-toolbar-row>
+</ng-template>
+
+<ng-template #login>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
+    </button>
+    <span>Restaurant Management System</span>
+    <button mat-icon-button>
+        <mat-icon class="signOutIcon">delete</mat-icon>
+    </button>    
+  </mat-toolbar-row>
+</ng-template>
