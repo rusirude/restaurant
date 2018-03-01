@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Router} from '@angular/router';
-import {Http,RequestOptions,Headers,CookieXSRFStrategy} from '@angular/http';
+import {Http,RequestOptions,Headers} from '@angular/http';
 
 import 'rxjs/add/operator/map'
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
