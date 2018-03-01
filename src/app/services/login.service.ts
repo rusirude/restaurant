@@ -3,9 +3,12 @@ import {Router} from '@angular/router';
 import {Http,RequestOptions,Headers,CookieXSRFStrategy} from '@angular/http';
 
 import 'rxjs/add/operator/map'
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class LoginService {
+
+  private loggedIn = new BehaviorSubject<boolean>(false);
 
   private token:String;
   private refrshToken:String;
@@ -48,6 +51,10 @@ export class LoginService {
   logout() {
     this.token = '';
     this.router.navigate(['/']);
+  }
+
+  checktoken(){
+    return this.token;
   }
 
 }

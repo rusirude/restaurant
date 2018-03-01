@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <div *ngIf="loggedMenu;then login else logout"></div>
+  <div *ngIf="isLoggedIn$ | async;then login else logout"></div>
 </mat-toolbar>
 
 <ng-template #logout>

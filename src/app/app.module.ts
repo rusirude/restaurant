@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { LoginService } from './services/login.service';
-import { HeaderService } from './services/header.service';
+import { AuthService } from './services/auth.service';
 
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [LoginService,HeaderService,AuthGuard],
+  providers: [LoginService,AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

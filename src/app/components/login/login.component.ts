@@ -1,8 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoginService } from '../../services/login.service';
-import { HeaderService } from '../../services/header.service';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -16,13 +16,13 @@ export class LoginComponent implements OnInit {
 
   @Output() headerFlag = new EventEmitter();
 
-  constructor(private router: Router, private logingService: LoginService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   logingUser() {    
-    this.logingService.obtainAccessToken(this.username, this.password);
+    this.authService.login(this.username, this.password);
   }
 
 }
