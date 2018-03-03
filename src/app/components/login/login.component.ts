@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
-import { AuthService } from '../../services/auth.service';
+import { LoginService } from '../../services/login.service';
 
 
 @Component({
@@ -12,17 +11,16 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   private username: string = "";
-  private password: string = "";
+  private password: string = ""; 
 
-  @Output() headerFlag = new EventEmitter();
-
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
   }
 
-  logingUser() {    
-    this.authService.login(this.username, this.password);
+  onLogIn() {  
+      
+    this.loginService.login(this.username, this.password);
   }
 
 }

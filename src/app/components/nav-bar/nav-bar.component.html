@@ -1,13 +1,14 @@
 <mat-sidenav-container>
-  <mat-sidenav  #sidenav mode="side">
+  <mat-sidenav #sidenav mode="over">
     <mat-nav-list>
       <a mat-list-item href="#">User Management</a>
-      <a mat-list-item href="#">User Role Management</a>
+      <a mat-list-item routerLink="/sysRole">User Role Management</a>
       <a mat-list-item href="#">Section Management</a>
       <a mat-list-item href="#">View Management</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>       
+  <mat-sidenav-content>   
+    <app-header (navToggle)="sidenav.toggle()"></app-header> 
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -11,6 +11,7 @@ import { HttpModule } from '@angular/http';
 
 import { LoginService } from './services/login.service';
 import { AuthService } from './services/auth.service';
+import { NavBarService } from './services/nav-bar.service';
 
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [LoginService,AuthGuard,AuthService],
+  providers: [LoginService,AuthGuard,AuthService,NavBarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

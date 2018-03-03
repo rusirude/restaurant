@@ -10,13 +10,13 @@
 
 <ng-template #login>
   <mat-toolbar-row>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="onMenuOpen()">
           <mat-icon>menu</mat-icon>
     </button>
     <span>Restaurant Management System</span>
     <button mat-icon-button>
         <mat-icon class="signOutIcon">delete</mat-icon>
     </button>  
-    <button mat-button (click)="onLogout()">Logout</button>  
+    <button class="btnLogout" mat-button (click)="onLogout()">Logout</button>  
   </mat-toolbar-row>
 </ng-template>

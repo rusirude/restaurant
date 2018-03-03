@@ -18,7 +18,7 @@ export class AuthService {
 
   private saveToken(token){   
     this.token = token.access_token;  
-    this.loggedIn.next(true);
+    this.loggedIn.next(true);    
     this.router.navigate(['/dashboard']);
   }
 
@@ -41,13 +41,15 @@ export class AuthService {
 
   login(username:string,password:string){
     if (username !== '' && password != '' ) { 
-      this.obtainAccessToken(username,password);      
+      this.obtainAccessToken(username,password);  
+      //this.loggedIn.next(true);
+      //this.router.navigate(['/dashboard']);    
     }
   }
 
   logout() {                            
     this.loggedIn.next(false);
-    this.router.navigate(['/']);
+    this.router.navigate(['/']);    
   }
 
 

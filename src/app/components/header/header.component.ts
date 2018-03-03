@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../../services/auth.service';
+import { NavBarService } from '../../services/nav-bar.service';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +11,20 @@ import { AuthService } from '../../services/auth.service';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn$: Observable<boolean>;
+  @Output() navToggle = new EventEmitter<boolean>();
+  
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private navBarService:NavBarService ) { }
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn;
   }
 
   onLogout(){
-    this.authService.logout();                      // {3}
+    this.authService.logout(); 
+  }
+
+  onMenuOpen(){
+    this.navToggle.emit(true);
   }
 
 }
